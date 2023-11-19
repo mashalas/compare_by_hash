@@ -3,8 +3,11 @@
 
 Формат запуска:
 ~~~
-compare_by_hash.py [-r|--recursive] [-u|--ignore-unexisted] [-d|--ignore-different] <dir1> <dir2>
-    -r|--recursive             рекурсивно с подкаталогами
-    -u|--ignore-unexisted      игнорировать различие в содержимом файлов
-    -d|--ignore-different      игнорировать отсутствие файлов/подкаталогов
+compare_by_hash.py [options] <dir1> <dir2>
+    -h|--help                  print this help
+    -r|--recursive             recursive scan directories
+    -u|--ignore-unexisted      do not print unexisted items
+    -d|--ignore-different      do not print different items
+    -s|--skip-once=<item>      do not enter to the directory or not compare the file
+    -S|--skip-from=<filename>  read skiping items (directories and files) from the file
 ~~~
