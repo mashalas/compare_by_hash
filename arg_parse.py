@@ -11,7 +11,7 @@ def split_short_arguments(argv, since = global_ARGUMENTS_STARTS_SINCE):
     for i in range(since, len(argv)):
         a = argv[i]
         if len(a) >= 3 and a[0] == "-" and a[1] != "-" and a.find("=") == -1:
-            # сначала "-", потом одна или больше букв, символа равенства нет - выделить каждую букву в отдельный параметр
+            # сначала "-", потом две или более буквы, символа равенства нет - выделить каждую букву в отдельный параметр
             for j in range(1, len(a)):
                 argv_splited.append("-" + a[j])
             continue
