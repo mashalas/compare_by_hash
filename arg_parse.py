@@ -1,5 +1,8 @@
 
 global_ARGUMENTS_STARTS_SINCE = 1 # 0=имя скрипта, 1,2,3,...=аргументы командной строки
+global_YES_VALUES   = ["1", "yes", "true"]
+global_FALSE_VALUES = ["0", "no",  "false"]
+
 
 # -------- разделить короткие объединённые параметры вида -la на -l -a --------
 # -------- вернуть список разделённых аргументов --------
@@ -89,9 +92,9 @@ def check_arg(
                     value = a[len(name)+1:len(a)]
                     if logical:
                         # если это логический флаг, то может быть указано значение TRUE: 1, yes, true;  FALSE: 0, no, false
-                        if value.lower() in YES_VALUES:
+                        if value.lower() in global_YES_VALUES:
                             value = True
-                        elif value.lower() in FALSE_VALUES:
+                        elif value.lower() in global_FALSE_VALUES:
                             value = False
                         else:
                             raise Exception("invalid value [{}] for logical option [{}]" . format(value, param_name))
